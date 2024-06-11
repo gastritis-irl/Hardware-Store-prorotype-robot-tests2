@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-06-07T11:03:30.341206" rpa="false" schemaversion="5">
+<suite id="s1" name="Test1" source="/home/csabee/VerVal/RobotFramework/test1.robot">
+<test id="s1-t1" name="Register Should Be Reflected In Database" line="27">
+<kw name="Connect To myDatabase">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2024-06-07T11:03:30.505081" level="INFO">Connecting using : pymysql.connect(db=jdbcdb, user=jdbcuser, passwd=***, host=localhost, port=3307, charset=None)</msg>
+<arg>pymysql</arg>
+<arg>${DB_NAME}</arg>
+<arg>${DB_USER}</arg>
+<arg>${DB_PASS}</arg>
+<arg>localhost</arg>
+<arg>${DB_PORT}</arg>
+<doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
+connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
+<status status="PASS" start="2024-06-07T11:03:30.498312" elapsed="0.011727"/>
+</kw>
+<status status="PASS" start="2024-06-07T11:03:30.498025" elapsed="0.012307"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-06-07T11:03:30.511340" level="INFO">Opening browser 'edge' to base url 'http://172.25.48.1:5173/register'.</msg>
+<msg time="2024-06-07T11:08:31.182457" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-41.png"&gt;&lt;img src="selenium-screenshot-41.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-06-07T11:08:31.183341" level="FAIL">TimeoutException: Message: timeout: Timed out receiving message from renderer: -0.002
+  (Session info: MicrosoftEdge=127.0.2610.3)
+Stacktrace:
+#0 0x55cf3c666fce &lt;unknown&gt;
+#1 0x55cf3c313252 &lt;unknown&gt;
+#2 0x55cf3c2fd058 &lt;unknown&gt;
+#3 0x55cf3c2fce22 &lt;unknown&gt;
+#4 0x55cf3c2fb12e &lt;unknown&gt;
+#5 0x55cf3c2fb654 &lt;unknown&gt;
+#6 0x55cf3c30f791 &lt;unknown&gt;
+#7 0x55cf3c31eb5f &lt;unknown&gt;
+#8 0x55cf3c323a9b &lt;unknown&gt;
+#9 0x55cf3c2fbc85 &lt;unknown&gt;
+#10 0x55cf3c31e7e0 &lt;unknown&gt;
+#11 0x55cf3c39f8f2 &lt;unknown&gt;
+#12 0x55cf3c381503 &lt;unknown&gt;
+#13 0x55cf3c352833 &lt;unknown&gt;
+#14 0x55cf3c3535ee &lt;unknown&gt;
+#15 0x55cf3c636321 &lt;unknown&gt;
+#16 0x55cf3c63942d &lt;unknown&gt;
+#17 0x55cf3c638eb2 &lt;unknown&gt;
+#18 0x55cf3c6398b5 &lt;unknown&gt;
+#19 0x55cf3c6276ab &lt;unknown&gt;
+#20 0x55cf3c639c51 &lt;unknown&gt;
+#21 0x55cf3c614275 &lt;unknown&gt;
+#22 0x55cf3c657738 &lt;unknown&gt;
+#23 0x55cf3c6578c9 &lt;unknown&gt;
+#24 0x55cf3c665d81 &lt;unknown&gt;
+#25 0x7f27b6108ac3 &lt;unknown&gt;
+</msg>
+<arg>${URL}</arg>
+<arg>browser=edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-06-07T11:03:30.511033" elapsed="300.673236">TimeoutException: Message: timeout: Timed out receiving message from renderer: -0.002
+  (Session info: MicrosoftEdge=127.0.2610.3)
+Stacktrace:
+#0 0x55cf3c666fce &lt;unknown&gt;
+#1 0x55cf3c313252 &lt;unknown&gt;
+#2 0x55cf3c2fd058 &lt;unknown&gt;
+#3 0x55cf3c2fce22 &lt;unknown&gt;
+#4 0x55cf3c2fb12e &lt;unknown&gt;
+#5 0x55cf3c2fb654 &lt;unknown&gt;
+#6 0x55cf3c30f791 &lt;unknown&gt;
+#7 0x55cf3c31eb5f &lt;unknown&gt;
+#8 0x55cf3c323a9b &lt;unknown&gt;
+#9 0x55cf3c2fbc85 &lt;unknown&gt;
+#10 0x55cf3c31e7e0 &lt;unknown&gt;
+#11 0x55cf3c39f8f2 &lt;unknown&gt;
+#12 0x55cf3c381503 &lt;unknown&gt;
+#13 0x55cf3c352833 &lt;unknown&gt;
+#14 0x55cf3c3535ee &lt;unknown&gt;
+#15 0x55cf3c636321 &lt;unknown&gt;
+#16 0x55cf3c63942d &lt;unknown&gt;
+#17 0x55cf3c638eb2 &lt;unknown&gt;
+#18 0x55cf3c6398b5 &lt;unknown&gt;
+#19 0x55cf3c6276ab &lt;unknown&gt;
+#20 0x55cf3c639c51 &lt;unknown&gt;
+#21 0x55cf3c614275 &lt;unknown&gt;
+#22 0x55cf3c657738 &lt;unknown&gt;
+#23 0x55cf3c6578c9 &lt;unknown&gt;
+#24 0x55cf3c665d81 &lt;unknown&gt;
+#25 0x7f27b6108ac3 &lt;unknown&gt;
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>example@user.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-06-07T11:08:31.186015" elapsed="0.000120"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>password</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-06-07T11:08:31.186402" elapsed="0.000027"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=register</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-06-07T11:08:31.186588" elapsed="0.000022"/>
+</kw>
+<kw name="Query" owner="DatabaseLibrary">
+<var>${count}</var>
+<arg>SELECT COUNT(*) FROM users WHERE email='example@user.com'</arg>
+<doc>Runs a query with the ``selectStatement`` and returns the result as a list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="NOT RUN" start="2024-06-07T11:08:31.186815" elapsed="0.000040"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${count[0][0]}</arg>
+<arg>${1}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-06-07T11:08:31.187115" elapsed="0.000039"/>
+</kw>
+<kw name="Close Browser">
+<status status="NOT RUN" start="2024-06-07T11:08:31.187679" elapsed="0.000058"/>
+</kw>
+<tag>UI-to-DB</tag>
+<status status="FAIL" start="2024-06-07T11:03:30.497509" elapsed="300.690634">TimeoutException: Message: timeout: Timed out receiving message from renderer: -0.002
+  (Session info: MicrosoftEdge=127.0.2610.3)
+Stacktrace:
+#0 0x55cf3c666fce &lt;unknown&gt;
+#1 0x55cf3c313252 &lt;unknown&gt;
+#2 0x55cf3c2fd058 &lt;unknown&gt;
+#3 0x55cf3c2fce22 &lt;unknown&gt;
+#4 0x55cf3c2fb12e &lt;unknown&gt;
+#5 0x55cf3c2fb654 &lt;unknown&gt;
+#6 0x55cf3c30f791 &lt;unknown&gt;
+#7 0x55cf3c31eb5f &lt;unknown&gt;
+#8 0x55cf3c323a9b &lt;unknown&gt;
+#9 0x55cf3c2fbc85 &lt;unknown&gt;
+#10 0x55cf3c31e7e0 &lt;unknown&gt;
+#11 0x55cf3c39f8f2 &lt;unknown&gt;
+#12 0x55cf3c381503 &lt;unknown&gt;
+#13 0x55cf3c352833 &lt;unknown&gt;
+#14 0x55cf3c3535ee &lt;unknown&gt;
+#15 0x55cf3c636321 &lt;unknown&gt;
+#16 0x55cf3c63942d &lt;unknown&gt;
+#17 0x55cf3c638eb2 &lt;unknown&gt;
+#18 0x55cf3c6398b5 &lt;unknown&gt;
+#19 0x55cf3c6276ab &lt;unknown&gt;
+#20 0x55cf3c639c51 &lt;unknown&gt;
+#21 0x55cf3c614275 &lt;unknown&gt;
+#22 0x55cf3c657738 &lt;unknown&gt;
+#23 0x55cf3c6578c9 &lt;unknown&gt;
+#24 0x55cf3c665d81 &lt;unknown&gt;
+#25 0x7f27b6108ac3 &lt;unknown&gt;
+</status>
+</test>
+<doc>Tests for Example Store with WSL2 &amp; Docker MySQL</doc>
+<status status="FAIL" start="2024-06-07T11:03:30.342028" elapsed="300.847183"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">UI-to-DB</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test1">Test1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
